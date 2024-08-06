@@ -77,11 +77,11 @@ async def pong(event):
     await message.edit("pong")
 ###########################
 ###########################
-@client.on(events.NewMessage(pattern=r'(?i)\b@umbrellla777\b'))
+@client.on(events.NewMessage)
 async def handle_message(event):
-    message_text = event.message.text
-    if message_text and "@umbrellla777" in message_text.lower():
+    if '@umbrellla777' in event.message.text.lower():
+        print("Сообщение содержит упоминание @umbrellla777")
         target_chat_id = "@chaksads"
         await client.send_message(target_chat_id, "Привет, я выйграл!")
-        print(f"Получено сообщение от {event.sender_id}: {message_text}")
+        print(f"Сообщение от {event.sender_id}: {event.message.text}")
 client.run_until_disconnected()
