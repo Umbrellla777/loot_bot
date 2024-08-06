@@ -76,15 +76,14 @@ async def pong(event):
     await message.edit("pong")
 ###########################
 ###########################
-client.on(events.NewMessage(chats="@testbotgitumb"))  
+@client.on(events.NewMessage(chats="@testbotgitumb"))  # Замените "@ваш_канал" на имя вашего канала
 async def handle_message(event):
-    message = event.message
-    sender = message.sender
+    message_text = event.message.text.lower()
+    pattern = r"@umbrellla777"
+    match = re.search(pattern, message_text)
 
-    
-    if ("@" in message.text) and ("Umbrellla777" in message.text.replace("@", "")):
+    if match:
         target_chat_id = "@chaksads"
-        await client.send_message(target_chat_id, "Привет, я выйграл") 
-
+        await client.send_message(target_chat_id, "Привет, я выйграл!")
 
 client.run_until_disconnected()
