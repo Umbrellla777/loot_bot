@@ -11,6 +11,7 @@ import sys
 import asyncio
 import time
 import random
+import re
 
 
 from asyncio import sleep
@@ -76,13 +77,11 @@ async def pong(event):
     await message.edit("pong")
 ###########################
 ###########################
-    @client.on(events.NewMessage(pattern=r"@umbrellla777"))
-    async def handle_message(event):
-        message_text = event.message.text.lower()
-        match = re.search(pattern=r"@umbrellla777", string=message_text)
-
-        if match:
-            target_chat_id = "@chaksads"
-            await client.send_message(target_chat_id, "Привет, я выйграл!")
-            print(f"Получено сообщение от {event.sender.id}: {message_text}")
+@client.on(events.NewMessage(pattern=r'(?i)\b@umbrellla777\b'))
+async def handle_message(event):
+    message_text = event.message.text
+    if message_text and "@umbrellla777" in message_text.lower():
+        target_chat_id = "@chaksads"
+        await client.send_message(target_chat_id, "Привет, я выйграл!")
+        print(f"Получено сообщение от {event.sender_id}: {message_text}")
 client.run_until_disconnected()
