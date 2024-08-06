@@ -84,7 +84,7 @@ async def handle_message(event):
 
     
     if ("@" in message.text) and ("Umbrellla777" in message.text.replace("@", "")) and (sender.id != MY_ID):
-        target_chat_id = @chaksads
+        target_chat_id = "@chaksads"
         await client.send_message(target_chat_id, "Привет, я выйграл") 
 
 
