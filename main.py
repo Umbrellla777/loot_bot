@@ -10,6 +10,7 @@
 import sys
 import asyncio
 import time
+import emoji
 import random
 
 
@@ -76,13 +77,13 @@ async def pong(event):
     await message.edit("pong")
 ###########################
 ###########################
-client.on(events.NewMessage(chats="@testbotgiumb"))  
+client.on(events.NewMessage(chats="@testbotgitumb"))  
 async def handle_message(event):
     message = event.message
     sender = message.sender
 
     
-    if ("@" in message.text) and ("Umbrellla777" in message.text.replace("@", "")) and (sender.id != MY_ID):
+    if ("@Umbrellla777" in message.text):
         target_chat_id = "@chaksads"
         await client.send_message(target_chat_id, "Привет, я выйграл") 
 
