@@ -28,7 +28,7 @@ pip3 install telethon
 clear
 
 # Sucsess
-cd Umbrellla777-bot
+cd loot_bot
 mkdir users
 chmod +777 start
 cp start ~/start
