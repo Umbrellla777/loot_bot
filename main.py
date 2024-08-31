@@ -79,9 +79,9 @@ async def pong(event):
 ###########################
 @client.on(events.NewMessage)
 async def handle_message(event):
-    if '@umbrellla777' in event.message.text.lower():
-        print("Сообщение содержит упоминание @umbrellla777")
-        target_chat_id = "@chaksads"
-        await client.send_message(target_chat_id, "Привет, я выйграл!")
+    if '@ksenechka_e' in event.message.text.lower():
+        print("Сообщение содержит упоминание")
+        target_chat_id = "@Mtt0836"
+        await client.send_message(target_chat_id, "Здравствуйте, увидела, что выйграла в розыгрыше")
         print(f"Сообщение от {event.sender_id}: {event.message.text}")
 client.run_until_disconnected()
